@@ -1,4 +1,4 @@
-﻿namespace EFCore.WebApi.Models
+﻿namespace EFCore.Dominio.Models
 {
     public class Arma
     {
