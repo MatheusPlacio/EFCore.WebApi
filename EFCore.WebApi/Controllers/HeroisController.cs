@@ -55,24 +55,6 @@ namespace EFCore.WebApi.Controllers
             return Ok();
         }
 
-        [HttpPost("Armas")]
-        public ActionResult PostArmas(RegisterHeroiViewModel hero, int id)
-        {
-            var heroi = new Heroi
-            {
-                Nome = "Magneto",
-                Armas = new List<Arma>
-                {
-                    new Arma { Nome = "Mente"}                             
-                }
-            };
-            _context.Herois.Add(heroi);
-            _context.SaveChanges();
-            return Ok();
-        }
-
-
-
         [HttpPut]
         public ActionResult Put(int id, string nome)
         {

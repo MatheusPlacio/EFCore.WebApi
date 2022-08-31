@@ -8,6 +8,7 @@ namespace EFCore.Dominio.ViewModels.Heroi
 {
     public class RegisterHeroiViewModel
     {
+        public int Id { get; set; }
         public string Nome { get; set; }
     }
 }
