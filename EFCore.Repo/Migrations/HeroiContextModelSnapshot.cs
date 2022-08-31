@@ -21,12 +21,12 @@ namespace EFCore.Repo.Migrations
 
             modelBuilder.Entity("EFCore.Dominio.Models.Arma", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("char(36)");
+                        .HasColumnType("int");
 
-                    b.Property<Guid>("HeroiId")
-                        .HasColumnType("char(36)");
+                    b.Property<int>("HeroiId")
+                        .HasColumnType("int");
 
                     b.Property<string>("Nome")
                         .IsRequired()
@@ -41,9 +41,9 @@ namespace EFCore.Repo.Migrations
 
             modelBuilder.Entity("EFCore.Dominio.Models.Batalha", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("char(36)");
+                        .HasColumnType("int");
 
                     b.Property<string>("Descricao")
                         .IsRequired()
@@ -66,9 +66,9 @@ namespace EFCore.Repo.Migrations
 
             modelBuilder.Entity("EFCore.Dominio.Models.Heroi", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("char(36)");
+                        .HasColumnType("int");
 
                     b.Property<string>("Nome")
                         .IsRequired()
@@ -81,11 +81,11 @@ namespace EFCore.Repo.Migrations
 
             modelBuilder.Entity("EFCore.Dominio.Models.HeroiBatalha", b =>
                 {
-                    b.Property<Guid>("BatalhaId")
-                        .HasColumnType("char(36)");
+                    b.Property<int>("BatalhaId")
+                        .HasColumnType("int");
 
-                    b.Property<Guid>("HeroiId")
-                        .HasColumnType("char(36)");
+                    b.Property<int>("HeroiId")
+                        .HasColumnType("int");
 
                     b.HasKey("BatalhaId", "HeroiId");
 
@@ -96,12 +96,12 @@ namespace EFCore.Repo.Migrations
 
             modelBuilder.Entity("EFCore.Dominio.Models.IdentidadeSecreta", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("char(36)");
+                        .HasColumnType("int");
 
-                    b.Property<Guid>("HeroiId")
-                        .HasColumnType("char(36)");
+                    b.Property<int>("HeroiId")
+                        .HasColumnType("int");
 
                     b.Property<string>("NomeReal")
                         .IsRequired()

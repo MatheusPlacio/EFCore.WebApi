@@ -2,9 +2,9 @@
 {
     public class IdentidadeSecreta
     {
-        public Guid Id { get; set; }
+        public int Id { get; set; }
         public string NomeReal { get; set; }
-        public Guid HeroiId { get; set; }
+        public int HeroiId { get; set; }
         public Heroi Heroi { get; set; }
     }
 }
