@@ -1,10 +1,14 @@
-﻿namespace EFCore.Dominio.Models
+﻿using System.Text.Json.Serialization;
+
+namespace EFCore.Dominio.Models
 {
     public class Arma
     {
-        public Guid Id { get; set; }
+        public int Id { get; set; }
         public string Nome { get; set; }
+
+        [JsonIgnore]
         public Heroi Heroi { get; set; }
-        public Guid HeroiId { get; set; }
+        public int HeroiId { get; set; }
     }
 }

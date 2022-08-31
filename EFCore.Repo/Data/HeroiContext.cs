@@ -14,7 +14,7 @@ namespace EFCore.Repo.Data
         public DbSet<HeroiBatalha> HeroisBatalhas { get; set; }
         public DbSet<IdentidadeSecreta> IdentidadesSecretas { get; set; }
 
-
+      
         protected override void OnModelCreating(ModelBuilder mb)
         {
             //Relacionei o N p/ N entre batalhaId e heroiId
