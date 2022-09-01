@@ -18,7 +18,7 @@ namespace EFCore.Repo.Data
         protected override void OnModelCreating(ModelBuilder mb)
         {
             //Relacionei o N p/ N entre batalhaId e heroiId
-            mb.Entity<HeroiBatalha>().HasKey(h => new{h.BatalhaId, h.HeroiId });
+            mb.Entity<HeroiBatalha>().HasKey(h => new { h.BatalhaId, h.HeroiId });
         }
 
         

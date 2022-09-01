@@ -23,31 +23,26 @@ namespace EFCore.WebApi.Controllers
         }
 
         [HttpPost("Armas")]
-        public ActionResult PostArmas(Arma armaId)
+        public ActionResult PostArmas()
         {
-            var ar = new Arma
-            {
-                Nome = "Mente",
-                Heroi = new Heroi
-                {
-                   Id = armaId.Id              
-                }
-            };
-       
-            _context.Armas.Add(ar);
+          var query = _context.Armas
+                .Include(a => a.HeroiId)
+                .Include(a => a.Id);
+ 
+            _context.Armas.Add((Arma)query);
             _context.SaveChanges();
             return Ok();
-        }
-
-        [HttpDelete]
-        public ActionResult Delete(int id)
-        {
-            var exluir = _context.Armas.FirstOrDefault(a => a.Id == id);
-            _context.Armas.Remove(exluir);
-            _context.SaveChanges();
-            return Ok();
-        }
-
-
     }
+
+    [HttpDelete]
+    public ActionResult Delete(int id)
+    {
+        var exluir = _context.Armas.FirstOrDefault(a => a.Id == id);
+        _context.Armas.Remove(exluir);
+        _context.SaveChanges();
+        return Ok();
+    }
+
+
+}
 }

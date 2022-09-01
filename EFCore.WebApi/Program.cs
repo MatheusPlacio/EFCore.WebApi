@@ -1,3 +1,4 @@
+using EFCore.Repo;
 using EFCore.Repo.Data;
 using Microsoft.EntityFrameworkCore;
 
@@ -15,6 +16,8 @@ string mySqlConnection = builder.Configuration.GetConnectionString("DefaultConne
 builder.Services.AddDbContext<HeroiContext>(options =>
                  options.UseMySql(mySqlConnection,
                  ServerVersion.AutoDetect(mySqlConnection)));
+
+builder.Services.AddScoped<IEFCoreRepository, EFCoreRpository>();
 
 var app = builder.Build();
 
